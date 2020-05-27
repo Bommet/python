@@ -1,7 +1,7 @@
 import json
 import os
 
-import utility
+from taskMapPrint import utility
 
 
 def scanFolders():
