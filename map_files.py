@@ -1,7 +1,7 @@
 import json
 import os
 
-from taskMapPrint import utility
+import utility
 
 
 def scanFolders():
@@ -22,7 +22,7 @@ def scanFolders():
 
 def scanAndMoveFilesInDirectory(folder):
     # Scans given folder for files with namin convention and moves them to their specific directory
-    for file in os.listdir(folder.value):
+    for file in [f for f in os.listdir(folder.value) if not utility.file_is_folder(folder, f)]:
         print("----------------------------------------------------------------------------------------")
         print(file)
 

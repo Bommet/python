@@ -1,3 +1,4 @@
+import os
 from enum import Enum
 
 
@@ -20,4 +21,12 @@ def checkFileName(file):
     if fileStart in Faecher._member_names_:
         fachOrdnerName = Faecher._member_map_[fileStart].value
 
+    fileStart = file[0:3]
+    if fileStart in Faecher._member_names_:
+        fachOrdnerName = Faecher._member_map_[fileStart].value
+
     return fachOrdnerName
+
+
+def file_is_folder(folder, file):
+    return os.path.isdir(os.path.join(folder.value, file))

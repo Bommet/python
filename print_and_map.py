@@ -5,7 +5,8 @@ import keyboard
 import psutil
 from win32 import win32api, win32print
 
-from taskMapPrint import utility, map_files
+import map_files
+import utility
 
 
 def prepareFilesToPrint(folder):
